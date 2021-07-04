@@ -36,6 +36,12 @@
       border-color: rgba(255, 255, 255, 0);
   }
 
+  @media (min-width:50em) {
+    &-questions {
+      gap: 18px;
+    }
+}
+
 }
 
 // Question Adjust 
@@ -46,6 +52,11 @@
     font-weight: 700;
     color: var(--clr-questionText);
   }
+  @media (min-width:50em) {
+    &-text  {
+      font-size: 2.4rem;
+    }
+}
 }
 
 // Next Button

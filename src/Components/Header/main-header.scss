@@ -15,4 +15,12 @@
     width: 100%;
     max-width: 130px;
   }
+  @media (min-width:50em) {
+      &-text {
+        font-size: 3.6rem;
+      }
+      &-logo {
+        max-width: 162px;
+      }
+  }
 }

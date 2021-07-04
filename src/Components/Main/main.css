@@ -37,11 +37,23 @@
   border-color: rgba(255, 255, 255, 0);
 }
 
+@media (min-width: 50em) {
+  .main-questions {
+    gap: 18px;
+  }
+}
+
 .question-text {
   cursor: default;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--clr-questionText);
+}
+
+@media (min-width: 50em) {
+  .question-text {
+    font-size: 2.4rem;
+  }
 }
 
 .next-button {

@@ -22,4 +22,13 @@
   width: 100%;
   max-width: 130px;
 }
+
+@media (min-width: 50em) {
+  .main-header-text {
+    font-size: 3.6rem;
+  }
+  .main-header-logo {
+    max-width: 162px;
+  }
+}
 /*# sourceMappingURL=main-header.css.map */

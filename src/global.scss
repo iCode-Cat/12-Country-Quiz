@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+    --clr-white:#FFF;
+    --clr-wrong:#EA8282;
+    --clr-correct:#60BF88;
+    --clr-optionText:#6066D0;
+    --clr-questionText:#1D355D;
+    --clr-button:#F9A826;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.6rem;
+  background-image: url('http://localhost:3000/background.png');
+  background-position: center;
+  background-size: cover;
+  padding: 1.5rem;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 5px ;
+  font-size: 1.1rem;
+  color: rgba(221, 221, 221, 0.699);
+}
+
+#root {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+    width: 100%;
+   
+}
+
+main {
+  width: 100%;
+  max-width: 464px;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.correct {
+  background: var(--clr-correct);
+  color: #FFF;
+}
+
+.incorrect {
+  background: var(--clr-wrong);
+  color: #FFF;
+}
+
+.incorrect:hover {
+  background: var(--clr-wrong);
+  color: #FFF;
+}
+
+.correct:hover {
+  background: var(--clr-correct);
+  color: #FFF;
+}
+
+.disable-events {
+  pointer-events: none;
+}
+
+.disable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.active {
+  opacity: 100;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

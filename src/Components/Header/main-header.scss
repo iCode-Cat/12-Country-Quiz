@@ -1,0 +1,18 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &-text {
+    color: var(--clr-white);
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+  }
+  &-logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    max-width: 130px;
+  }
+}

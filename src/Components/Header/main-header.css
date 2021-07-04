@@ -1,0 +1,25 @@
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.main-header-text {
+  color: var(--clr-white);
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.main-header-logo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 130px;
+}
+/*# sourceMappingURL=main-header.css.map */

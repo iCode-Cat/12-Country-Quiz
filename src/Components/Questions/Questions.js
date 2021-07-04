@@ -17,7 +17,8 @@ const optionAlphabets = [
 ];
 
 const Questions = () => {
-  const { getData, options, setAnswer, answer } = useContext(countryContext);
+  const { getData, options, setAnswer, answer, loading } =
+    useContext(countryContext);
   const question = options.find((option) => option.isCorrect);
 
   const [result, setResult] = useState([null]);
@@ -31,7 +32,6 @@ const Questions = () => {
   useEffect(() => {
     questionHandler();
   }, []);
-
   return (
     <>
       {question !== undefined && (

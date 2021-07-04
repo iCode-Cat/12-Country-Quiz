@@ -14,6 +14,7 @@ const CountyProvider = (props) => {
     },
   ]);
   const [answered, setAnswered] = useState([]);
+  const [loading, setLoading] = useState(true);
   let numbersArray = [];
   // Return a number randomly
   const randomNumber = (num) => {
@@ -71,17 +72,39 @@ const CountyProvider = (props) => {
       console.log(error);
     }
   };
+
+  console.log(callData.data);
+  // Image preload
+  const cacheImages = async () => {
+    if (callData.length < 1) return;
+    const promises = await callData.data.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src.flag;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+    await Promise.all(promises);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
   useEffect(() => {
     getData();
+    cacheImages();
   }, [callData]);
 
   useEffect(() => {
-    dataHandler();
+    dataHandler(0);
   }, [0]);
 
   return (
     <countryContext.Provider
       value={{
+        loading,
+        setLoading,
         callData,
         mainCountry,
         setMainCountry,

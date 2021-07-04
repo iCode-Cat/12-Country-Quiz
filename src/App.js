@@ -1,6 +1,6 @@
-import Main from "./Components/Main/Main";
-import CountyProvider from "./Context/CountyProvider";
-import './global.scss'
+import Main from './Components/Main/Main';
+import CountyProvider from './Context/CountyProvider';
+import './global.scss';
 
 const App = () => {
   return (

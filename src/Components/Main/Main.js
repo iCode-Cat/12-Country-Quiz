@@ -6,16 +6,17 @@ import './main.scss';
 import Result from '../Results/Result';
 import World from '../World';
 const Main = () => {
-  const { answer, callData } = useContext(countryContext);
+  const { answer, loading } = useContext(countryContext);
+  console.log(loading);
   const correct = answer[0].correct;
   return (
     <>
-      {callData.length < 1 && <World />}
+      {loading && <World />}
       <main className='main'>
         <article className='main-article'>
           <MainHeader correct={correct} />
           <section className={`main-questions-container`}>
-            {correct === false ? <Result /> : <Questions />}
+            {!loading ? correct === false ? <Result /> : <Questions /> : ''}
           </section>
         </article>
       </main>

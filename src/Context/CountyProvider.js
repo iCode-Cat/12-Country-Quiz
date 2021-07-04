@@ -73,7 +73,6 @@ const CountyProvider = (props) => {
     }
   };
 
-  console.log(callData.data);
   // Image preload
   const cacheImages = async () => {
     if (callData.length < 1) return;
@@ -86,6 +85,8 @@ const CountyProvider = (props) => {
       });
     });
     await Promise.all(promises);
+    const img = new Image();
+    img.src = '../undraw_winners_ao2o 2.svg';
     setTimeout(() => {
       setLoading(false);
     }, 2000);

@@ -32,7 +32,7 @@ const Questions = () => {
   useEffect(() => {
     questionHandler();
   }, []);
-  console.log(answer);
+
   return (
     <>
       {question !== undefined && (
@@ -58,7 +58,7 @@ const Questions = () => {
             </div>
           )}
           {options.map((option, index) => (
-            <div className={`main-question-box`}>
+            <div key={index} className={`main-question-box`}>
               <div
                 onClick={() => {
                   setResult({

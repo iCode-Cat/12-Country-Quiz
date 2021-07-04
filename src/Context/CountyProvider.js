@@ -5,6 +5,7 @@ export const countryContext = createContext();
 
 const CountyProvider = (props) => {
   const [mainCountry, setMainCountry] = useState([]);
+  const [callData, setCallData] = useState([]);
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState([
     {
@@ -12,12 +13,14 @@ const CountyProvider = (props) => {
       correct: null,
     },
   ]);
-
+  const [answered, setAnswered] = useState([]);
+  let numbersArray = [];
   // Return a number randomly
   const randomNumber = (num) => {
-    let numbersArray = [];
     for (let i = 0; i < num; i++) {
-      numbersArray.push(i);
+      if (!answered.find((past) => past === i) && i !== 0) {
+        numbersArray.push(i);
+      }
     }
     const shuffledArray = numbersArray.sort((a, b) => 0.5 - Math.random());
     return shuffledArray;
@@ -25,11 +28,11 @@ const CountyProvider = (props) => {
 
   // Call Country Data
   const getData = async () => {
+    if (callData.length < 1) return;
     try {
       let updatedStates = [];
-      const get = await axios.get('https://restcountries.eu/rest/v2/all');
-      const dataLength = get.data.length;
-      const data = get.data;
+      const dataLength = callData.data.length;
+      const data = callData.data;
       // Push countries
       randomNumber(dataLength).map((num, index) => {
         const { name, capital, flag, numericCode } = data[num];
@@ -52,14 +55,29 @@ const CountyProvider = (props) => {
       });
       // Set all options into one
       setOptions(updatedStates.sort((a, b) => 0.5 - Math.random()));
+      setAnswered([...answered, numbersArray[0]]);
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
+  const dataHandler = async () => {
+    try {
+      const get = await axios.get(
+        'https://restcountries.eu/rest/v2/region/europe'
+      );
+      setCallData(get);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     getData();
-  }, []);
+  }, [callData]);
+
+  useEffect(() => {
+    dataHandler();
+  }, [0]);
 
   return (
     <countryContext.Provider

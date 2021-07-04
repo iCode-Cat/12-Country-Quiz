@@ -32,7 +32,6 @@ body {
           align-items: center;
   height: 100vh;
   font-size: 1.6rem;
-  background-image: url("http://localhost:3000/background.png");
   background-position: center;
   background-size: cover;
   padding: 1.5rem;
@@ -117,5 +116,12 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.world {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 /*# sourceMappingURL=global.css.map */

@@ -4,11 +4,13 @@ import Questions from '../Questions/Questions';
 import { countryContext } from '../../Context/CountyProvider';
 import './main.scss';
 import Result from '../Results/Result';
+import World from '../World';
 const Main = () => {
-  const { answer } = useContext(countryContext);
+  const { answer, callData } = useContext(countryContext);
   const correct = answer[0].correct;
   return (
     <>
+      {callData.length < 1 && <World />}
       <main className='main'>
         <article className='main-article'>
           <MainHeader correct={correct} />

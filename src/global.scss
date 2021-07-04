@@ -26,7 +26,6 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 1.6rem;
-  background-image: url('http://localhost:3000/background.png');
   background-position: center;
   background-size: cover;
   padding: 1.5rem;
@@ -97,4 +96,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.world {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }

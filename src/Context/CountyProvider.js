@@ -82,6 +82,7 @@ const CountyProvider = (props) => {
   return (
     <countryContext.Provider
       value={{
+        callData,
         mainCountry,
         setMainCountry,
         getData,

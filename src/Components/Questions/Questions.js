@@ -23,7 +23,6 @@ const Questions = () => {
   const [result, setResult] = useState([null]);
   const [random, setRandom] = useState(0);
   const [answerCorrect, setAnswerCorrect] = useState(null);
-
   const questionHandler = () => {
     const randomNumber = Math.floor(Math.random() * 2);
     setRandom(randomNumber);

@@ -30,7 +30,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  min-height: 103vh;
   font-size: 1.6rem;
   background-position: center;
   background-size: cover;
